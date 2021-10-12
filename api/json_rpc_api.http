@@ -1,0 +1,138 @@
+@url=http://192.168.1.88:8899
+@test=https://api.testnet.solana.com
+@dev=https://api.devnet.solana.com
+
+### get Account Info
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getAccountInfo",
+    "params": [
+        "7pWPedYyGtkCBUSY4HJQiCeSGw63WkaKDQUjYzAhK7Sq",
+        {
+            "encoding": "base58"
+        }
+    ]
+}
+
+### get Balance
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getBalance",
+    "params": [
+        "7pWPedYyGtkCBUSY4HJQiCeSGw63WkaKDQUjYzAhK7Sq"
+    ]
+}
+
+### get Balance after finalized
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getBalance",
+    "params": [
+        "7pWPedYyGtkCBUSY4HJQiCeSGw63WkaKDQUjYzAhK7Sq",
+        {
+            "commitment": "finalized"// comfirmed || processed
+        }
+    ]
+}
+
+### get Block Height
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id":1,
+    "method":"getBlockHeight"
+}
+
+### get Block
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id":1,
+    "method":"getBlock",
+    "params":[
+        83596640,
+        {
+            "encoding": "json",
+            "transactionDetails":"full",
+            "rewards":false
+        }
+    ]
+}
+
+### get Block Production
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id":1,
+    "method":"getBlockProduction"
+}
+
+### get Block limit
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id":1,
+    "method":"getBlocksWithLimit",
+    "params": [5, 3]
+}
+
+### get Block Time
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id":1,
+    "method":"getBlockTime",
+    "params": [83596640]
+}
+
+### get Cluster Nodes
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id":1,
+    "method":"getClusterNodes"
+}
+
+### get EpochInfo
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id":1,
+    "method":"getEpochInfo"
+}
+
+### get Epoch Schedule
+POST {{dev}}
+Content-Type:application/json
+
+{
+    "jsonrpc": "2.0",
+    "id":1,
+    "method":"getEpochSchedule"
+}
